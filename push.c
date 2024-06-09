@@ -8,21 +8,17 @@
  */
 void push(stack_t **stack, int new_value)
 {
-    stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-    if (new_node == NULL)
-    {
-        exit(EXIT_FAILURE);
-    }
+	if (!new_node)
+		exit(EXIT_FAILURE);
 
-    new_node->n = new_value;
-    new_node->prev = NULL;
-    new_node->next = *stack;
+	new_node->n = new_value;
+	new_node->prev = NULL;
+	new_node->next = *stack;
 
-    if (*stack != NULL)
-    {
-        (*stack)->prev = new_node;
-    }
+    if (*stack)
+	    (*stack)->prev = new_node;
 
     *stack = new_node;
 }
