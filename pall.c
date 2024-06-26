@@ -12,7 +12,7 @@ void pall(stack_t **stack)
     {
         while ((*stack) != NULL)
         {
-            fprint("%d\n", (*stack)->n);
+            printf("%d\n", (*stack)->n);
             *stack = (*stack)->next;
         }
 
